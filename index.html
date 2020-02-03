@@ -9,17 +9,30 @@
 </head>
 <body>
     <div>
-        <h1>Timer</h1>
-        <p></p>
+        <h1 id="sixNations">Six Nations Scoreboard</h1>
     </div>
-    <br>
-    <div>
-        <h2>Team 1 Score</h2>
+    <div class="timer">
+            <h2>Timer</h1>
+            <!-- <p id="timerFunc">00:00:00</p> -->
+            <div id="secondTenthsExample">
+                    <div class="values"></div>
+                </div>
     </div>
-    <div>   
-        <h2>Team 2 Score</h2>
+    <div id="startGame">
+        <button class="timerButton">Start Game</button>
+    </div>
+    <div id="gameBox">
+        <br>
+        <div>
+            <h3 class="scores">Team 1 Score</h2>
+            <p id="teamOneScore"></p>
+        </div>
+        <div>   
+            <h3 class="scores">Team 2 Score</h2>
+            <p id="teamTwoScore"></p>
+        </div>
     </div>
 
-    <script src="app.js"></script>
+    <script src="/app.js"></script>
 </body>
 </html>
