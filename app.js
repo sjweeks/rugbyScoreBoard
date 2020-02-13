@@ -1,5 +1,4 @@
-const timerNumber = document.getElementById("timerFunc");
-const timerButton = document.getElementsByClassName("timerButton");
+const timerButton = document.getElementById("timerButton");
 const teamOne = document.getElementById("teamOneScore");
 const teamTwo = document.getElementById("teamTwoScore");
 const tryy = document.getElementById("try")
@@ -16,7 +15,10 @@ let t2s = document.getElementById("teamTwoScore")
 let minutes =0
 let seconds =0
 
-let timer = setInterval(()=>{
+
+timerButton.addEventListener("click", () => {
+  console.log("Button Clicked");
+  let timer = setInterval(()=>{
     seconds++
     if(seconds==60){
         minutes++
@@ -28,6 +30,8 @@ let timer = setInterval(()=>{
     }
     document.getElementById("timer").innerHTML = minutes + "m" + seconds + "s"
 }, 16.6)
+  
+} )
 
 let teamOneScore =0
 let teamTwoScore =0
