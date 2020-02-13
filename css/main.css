@@ -2,7 +2,7 @@
 
 * {
     box-sizing: border-box;
-
+    margin: 10px;
 }
 
 body {
@@ -21,10 +21,19 @@ body {
     font-size: 30px;
 }
 
-#gameBox {
+.gameBox {
     display: flex;
     flex-wrap: wrap;
     width: 80%;
+    padding: 10px 40px;
+    justify-content: space-around;
+    color: whitesmoke;
+}
+
+.buttonBox {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
     padding: 10px 40px;
     justify-content: space-around;
     color: whitesmoke;
