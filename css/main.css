@@ -12,7 +12,7 @@ body {
     font-family: 'Playfair Display SC', serif;
 }
 
-#sixNations {
+#sixNations, .timer {
     color: #B48955;
     text-align: center;
 }
@@ -40,19 +40,29 @@ body {
 }
 
 button {
+    font-size: 17px;
+    background-color: #2d3748;
+    color: whitesmoke;
+    border: #B48955 1px solid;
+    border-radius: 10px;
+    height: 40px;
+    width: 100px;
+    box-shadow: 20px rgba(0,0,0,0.18);
+  }
+  
+/* 
+button {
     display: inline-block;
     padding: 0.35cm 0.8cm;
     border: 0.1cm solid whitesmoke;
     margin: 0 0.3cm 0.3cm 0;
     border-radius: 0.12cm;
     box-sizing: border-box;
-    text-emphasis: none;
     text-align: center;
     transition: 0.5s;
-}
+} */
 
-button :hover{
-    color: whitesmoke;
-    background-color: #2d3748;
-    opacity: 0.4;
-}
+.buttons :hover{
+    background-color: darkgray;
+    opacity: 0.7;
+  }
