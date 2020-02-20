@@ -50,35 +50,67 @@ tryy.addEventListener("click", () => {
   teamOneScore += 5;
   t1s.innerText = teamOneScore;
   document.getElementById("con").disabled = false;
+
+  let paragraph = document.createElement("P");
+    paragraph.innerHTML = "Team One Scored a Try";
+    document.getElementById("teamOneCommentary").appendChild(paragraph);
 });
 try2.addEventListener("click", () => {
   teamTwoScore += 5;
   t2s.innerText = teamTwoScore;
   document.getElementById("con2").disabled = false;
+
+  let paragraph = document.createElement("P");
+  paragraph.innerHTML = "Team Two Scored a Try";
+  document.getElementById("teamTwoCommentary").appendChild(paragraph);
 });
 pen.addEventListener("click", () => {
   teamOneScore += 3;
   t1s.innerText = teamOneScore;
+
+  let paragraph = document.createElement("P");
+  paragraph.innerHTML = "Team One Scored a Penalty";
+  document.getElementById("teamOneCommentary").appendChild(paragraph);
 });
 pen2.addEventListener("click", () => {
   teamTwoScore += 3;
   t2s.innerText = teamTwoScore;
+
+  let paragraph = document.createElement("P");
+  paragraph.innerHTML = "Team Two Scored a Penalty";
+  document.getElementById("teamTwoCommentary").appendChild(paragraph);
 });
 con.addEventListener("click", () => {
   teamOneScore += 2;
   t1s.innerText = teamOneScore;
   document.getElementById("con").disabled = true;
+
+  let paragraph = document.createElement("P");
+  paragraph.innerHTML = "Team One Scored a Conversion";
+  document.getElementById("teamOneCommentary").appendChild(paragraph);
 });
 con2.addEventListener("click", () => {
   teamTwoScore += 2;
   t2s.innerText = teamTwoScore;
   document.getElementById("con2").disabled = true;
+
+  let paragraph = document.createElement("P");
+  paragraph.innerHTML = "Team Two Scored a Conversion";
+  document.getElementById("teamTwoCommentary").appendChild(paragraph);
 });
 dg.addEventListener("click", () => {
   teamOneScore += 3;
   t1s.innerText = teamOneScore;
+
+  let paragraph = document.createElement("P");
+  paragraph.innerHTML = "Team One Scored a Drop Goal";
+  document.getElementById("teamOneCommentary").appendChild(paragraph);
 });
 dg2.addEventListener("click", () => {
   teamTwoScore = teamTwoScore + 3;
   t2s.innerText = teamTwoScore;
+
+  let paragraph = document.createElement("P");
+  paragraph.innerHTML = "Team Two Scored a Drop Goal";
+  document.getElementById("teamTwoCommentary").appendChild(paragraph);
 });
