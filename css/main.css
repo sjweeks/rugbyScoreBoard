@@ -12,6 +12,10 @@ body {
     font-family: 'Playfair Display SC', serif;
 }
 
+.statsHeader{
+    font-size: 14px;
+}
+
 #sixNations, .timer {
     color: #B48955;
     text-align: center;
@@ -24,7 +28,7 @@ body {
 .gameBox {
     display: flex;
     flex-wrap: wrap;
-    width: 80%;
+    width: 100%;
     padding: 10px 40px;
     justify-content: space-around;
     color: whitesmoke;
@@ -36,11 +40,36 @@ body {
     background-color: #2d3748;
     padding: 20px;
     border-radius: 50px;
-    height: 600px;
+    /* height: 600px; */
     align-content: center;
     margin: 0 80px;
     font-weight: 300;
     box-shadow: -6px 4px 20px 20px rgba(0,0,0,0.18);
+  }
+
+  .headerContainer{
+      display: flex;
+      align-content: center;
+      padding: 0 10px;
+      justify-content: space-around;
+  }
+
+.statsRow{
+    display: flex;
+    font-size: 13px;
+}
+
+  .statsContainer{
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      border-style: solid 10px;
+      border-radius: 20px;
+      box-shadow: -6px 4px 20px 20px rgba(0,0,0,0.18);
+      color: whitesmoke;
+      line-height: 3px;
+      /* height: 180px; */
   }
 
 .buttonBox {
@@ -60,20 +89,8 @@ button {
     border-radius: 10px;
     height: 40px;
     width: 100px;
-    box-shadow: 20px rgba(0,0,0,0.18);
   }
 
-/* 
-button {
-    display: inline-block;
-    padding: 0.35cm 0.8cm;
-    border: 0.1cm solid whitesmoke;
-    margin: 0 0.3cm 0.3cm 0;
-    border-radius: 0.12cm;
-    box-sizing: border-box;
-    text-align: center;
-    transition: 0.5s;
-} */
 
 .buttons :hover{
     background-color: darkgray;

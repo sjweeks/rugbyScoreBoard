@@ -9,11 +9,27 @@ const con = document.getElementById("con");
 const con2 = document.getElementById("con2");
 const dg = document.getElementById("dg");
 const dg2 = document.getElementById("dg2");
+const tryStat = document.getElementById("tryStats");
+const conStat = document.getElementById("conStats");
+const penStat = document.getElementById("penStats");
+const dgStat = document.getElementById("dgStats");
+const tryStat2 = document.getElementById("tryStats2");
+const conStat2 = document.getElementById("conStats2");
+const penStat2 = document.getElementById("penStats2");
+const dgStat2 = document.getElementById("dgStats2");
 
 let t1s = document.getElementById("teamOneScore");
 let t2s = document.getElementById("teamTwoScore");
 let minutes = 0;
 let seconds = 0;
+let tryNo1 = 0;
+let conNo1 = 0;
+let penNo1 = 0;
+let dgNo1 = 0;
+let tryNo2 = 0;
+let conNo2 = 0;
+let penNo2 = 0;
+let dgNo2 = 0;
 
 timerButton.addEventListener("click", () => {
   console.log("Button Clicked");
@@ -49,6 +65,8 @@ let teamTwoScore = 0;
 tryy.addEventListener("click", () => {
   teamOneScore += 5;
   t1s.innerText = teamOneScore;
+  tryNo1 ++;
+  tryStat.textContent = tryNo1;
   document.getElementById("con").disabled = false;
 
   let paragraph = document.createElement("P");
@@ -58,6 +76,8 @@ tryy.addEventListener("click", () => {
 try2.addEventListener("click", () => {
   teamTwoScore += 5;
   t2s.innerText = teamTwoScore;
+  tryNo2 ++;
+  tryStat2.textContent = tryNo2;
   document.getElementById("con2").disabled = false;
 
   let paragraph = document.createElement("P");
@@ -67,6 +87,9 @@ try2.addEventListener("click", () => {
 pen.addEventListener("click", () => {
   teamOneScore += 3;
   t1s.innerText = teamOneScore;
+  penNo1 ++;
+  penStat.textContent = penNo1;
+  document.getElementById("con").disabled = true;
 
   let paragraph = document.createElement("P");
   paragraph.innerHTML = "Team One Scored a Penalty";
@@ -75,6 +98,9 @@ pen.addEventListener("click", () => {
 pen2.addEventListener("click", () => {
   teamTwoScore += 3;
   t2s.innerText = teamTwoScore;
+  penNo2 ++;
+  penStat2.textContent = penNo2;
+  document.getElementById("con2").disabled = true;
 
   let paragraph = document.createElement("P");
   paragraph.innerHTML = "Team Two Scored a Penalty";
@@ -83,6 +109,8 @@ pen2.addEventListener("click", () => {
 con.addEventListener("click", () => {
   teamOneScore += 2;
   t1s.innerText = teamOneScore;
+  conNo1 ++;
+  conStat.textContent = conNo1;
   document.getElementById("con").disabled = true;
 
   let paragraph = document.createElement("P");
@@ -92,6 +120,8 @@ con.addEventListener("click", () => {
 con2.addEventListener("click", () => {
   teamTwoScore += 2;
   t2s.innerText = teamTwoScore;
+  conNo2++;
+  conStat2.textContent = conNo2;
   document.getElementById("con2").disabled = true;
 
   let paragraph = document.createElement("P");
@@ -101,6 +131,9 @@ con2.addEventListener("click", () => {
 dg.addEventListener("click", () => {
   teamOneScore += 3;
   t1s.innerText = teamOneScore;
+  dgNo1 ++;
+  dgStat.textContent = dgNo1;
+  document.getElementById("con").disabled = true;
 
   let paragraph = document.createElement("P");
   paragraph.innerHTML = "Team One Scored a Drop Goal";
@@ -109,6 +142,9 @@ dg.addEventListener("click", () => {
 dg2.addEventListener("click", () => {
   teamTwoScore = teamTwoScore + 3;
   t2s.innerText = teamTwoScore;
+  dgNo2 ++;
+  dgStat2.textContent = dgNo2;
+  document.getElementById("con2").disabled = true;
 
   let paragraph = document.createElement("P");
   paragraph.innerHTML = "Team Two Scored a Drop Goal";
