@@ -18,9 +18,15 @@
             <br>
             <h2>Timer</h1>
             <p id="timer"></p>
-            <div class="buttons" id="startGame">
-                <button id="timerButton">Start Game</button>
+            <div class="timerButtons">
+                <div class="buttons" id="startGame">
+                    <button id="timerButton"></button>
+                </div>
+                <div class="buttons" id="pauseGame">
+                    <button id="pauseButton"></button>
+                </div>
             </div>
+
         </div>
         <div class="statsContainer">
             <h3 class="statsHeader">Team One Stats</h3>
@@ -83,15 +89,19 @@
         </div>
     <br>
         <div class="gameBox">
-            <div>
+            <div class="scrollDiv">
                 <h3 class="scores">Team 1 Score</h2>
-                <p id="teamOneScore"></p>
-                <div id="teamOneCommentary"></div>
+                    <div class="scrollDiv">
+                        <p id="teamOneScore"></p>
+                        <div id="teamOneCommentary"></div>
+                    </div>
             </div>
-            <div>   
+            <div class="scrollDiv">   
                 <h3 class="scores">Team 2 Score</h2>
-                <p id="teamTwoScore"></p>
-                <div id="teamTwoCommentary"></div>
+                    <div class="scrollDiv">
+                        <p id="teamTwoScore"></p>
+                        <div id="teamTwoCommentary"></div>
+                    </div>
                 <br>
                 <br>
                 <br>

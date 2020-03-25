@@ -1,4 +1,5 @@
 const timerButton = document.getElementById("timerButton");
+const pauseButton = document.getElementById("pauseButton");
 const teamOne = document.getElementById("teamOneScore");
 const teamTwo = document.getElementById("teamTwoScore");
 const tryy = document.getElementById("try");
@@ -31,23 +32,37 @@ let conNo2 = 0;
 let penNo2 = 0;
 let dgNo2 = 0;
 
+timerButton.innerHTML = "Start Game";
+pauseButton.innerHTML = "Pause Game";
+
 timerButton.addEventListener("click", () => {
   console.log("Button Clicked");
+  // timerButton.innerHTML = "Pause Game";
   document.getElementById("try").disabled = false;
   document.getElementById("try2").disabled = false;
   document.getElementById("pen").disabled = false;
   document.getElementById("pen2").disabled = false;
   document.getElementById("dg").disabled = false;
   document.getElementById("dg2").disabled = false;
+
   let timer = setInterval(() => {
     seconds++;
     if (seconds == 60) {
       minutes++;
       seconds = 0;
     }
+
+    if(minutes < 80) {
+      pauseButton.addEventListener("click", () => {
+        clearInterval(timer);
+      })
+    }
+
     if (minutes == 80) {
       clearInterval(timer);
-      document.getElementById("timer").innerHTML = "Game over";
+      timerButton.innerHTML = "Game";
+      pauseButton.innerHTML = "Over";
+      document.getElementById("timerButton").disabled = true;
       document.getElementById("try").disabled = true;
       document.getElementById("try2").disabled = true;
       document.getElementById("pen").disabled = true;
@@ -57,6 +72,10 @@ timerButton.addEventListener("click", () => {
     }
     document.getElementById("timer").innerHTML = minutes + "m" + seconds + "s";
   }, 10);
+
+  // let pause = () => {
+
+  // }
 });
 
 let teamOneScore = 0;
@@ -70,7 +89,7 @@ tryy.addEventListener("click", () => {
   document.getElementById("con").disabled = false;
 
   let paragraph = document.createElement("P");
-    paragraph.innerHTML = "Team One Scored a Try";
+    paragraph.innerHTML = `Try Scored at ${minutes}m ${seconds}s`;
     document.getElementById("teamOneCommentary").appendChild(paragraph);
 });
 try2.addEventListener("click", () => {
@@ -81,7 +100,7 @@ try2.addEventListener("click", () => {
   document.getElementById("con2").disabled = false;
 
   let paragraph = document.createElement("P");
-  paragraph.innerHTML = "Team Two Scored a Try";
+  paragraph.innerHTML = `Try Scored at ${minutes}m ${seconds}s`;
   document.getElementById("teamTwoCommentary").appendChild(paragraph);
 });
 pen.addEventListener("click", () => {
@@ -92,7 +111,7 @@ pen.addEventListener("click", () => {
   document.getElementById("con").disabled = true;
 
   let paragraph = document.createElement("P");
-  paragraph.innerHTML = "Team One Scored a Penalty";
+  paragraph.innerHTML = `Penalty Scored at ${minutes}m ${seconds}s`;
   document.getElementById("teamOneCommentary").appendChild(paragraph);
 });
 pen2.addEventListener("click", () => {
@@ -103,7 +122,7 @@ pen2.addEventListener("click", () => {
   document.getElementById("con2").disabled = true;
 
   let paragraph = document.createElement("P");
-  paragraph.innerHTML = "Team Two Scored a Penalty";
+  paragraph.innerHTML = `Penalty Scored at ${minutes}m ${seconds}s`;
   document.getElementById("teamTwoCommentary").appendChild(paragraph);
 });
 con.addEventListener("click", () => {
@@ -114,7 +133,7 @@ con.addEventListener("click", () => {
   document.getElementById("con").disabled = true;
 
   let paragraph = document.createElement("P");
-  paragraph.innerHTML = "Team One Scored a Conversion";
+  paragraph.innerHTML = `Conversion Scored at ${minutes}m ${seconds}s`;
   document.getElementById("teamOneCommentary").appendChild(paragraph);
 });
 con2.addEventListener("click", () => {
@@ -125,7 +144,7 @@ con2.addEventListener("click", () => {
   document.getElementById("con2").disabled = true;
 
   let paragraph = document.createElement("P");
-  paragraph.innerHTML = "Team Two Scored a Conversion";
+  paragraph.innerHTML = `Conversion Scored at ${minutes}m ${seconds}s`;
   document.getElementById("teamTwoCommentary").appendChild(paragraph);
 });
 dg.addEventListener("click", () => {
@@ -136,7 +155,7 @@ dg.addEventListener("click", () => {
   document.getElementById("con").disabled = true;
 
   let paragraph = document.createElement("P");
-  paragraph.innerHTML = "Team One Scored a Drop Goal";
+  paragraph.innerHTML = `Drop Goal Scored at ${minutes}m ${seconds}s`;
   document.getElementById("teamOneCommentary").appendChild(paragraph);
 });
 dg2.addEventListener("click", () => {
@@ -147,6 +166,6 @@ dg2.addEventListener("click", () => {
   document.getElementById("con2").disabled = true;
 
   let paragraph = document.createElement("P");
-  paragraph.innerHTML = "Team Two Scored a Drop Goal";
+  paragraph.innerHTML = `Drop Goal Scored at ${minutes}m ${seconds}s`;
   document.getElementById("teamTwoCommentary").appendChild(paragraph);
 });

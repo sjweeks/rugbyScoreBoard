@@ -39,10 +39,9 @@ body {
   flex-wrap: wrap;
   width: 100%;
   padding: 10px 40px;
-  /* height: auto; */
+  height: auto;
   justify-content: space-around;
   color: whitesmoke;
-  /* overflow: scroll; */
 }
 
 .container {
@@ -51,13 +50,18 @@ body {
   background-color: #2d3748;
   padding: 20px;
   border-radius: 50px;
-  /* height: 600px; */
+  height: 500px;
   align-content: center;
   margin: 0 80px;
   font-weight: 300;
   box-shadow: -6px 4px 20px 20px rgba(0, 0, 0, 0.18);
-  /* position: relative; */
   /* overflow: scroll; */
+}
+
+.scrollDiv {
+  width: 260px;
+  height: 290px;
+  overflow: scroll;
 }
 
 .headerContainer {
@@ -101,7 +105,12 @@ button {
   border: #b48955 1px solid;
   border-radius: 10px;
   height: 40px;
-  width: 100px;
+  width: 110px;
+}
+
+.timerButtons {
+  display: flex;
+  flex-direction: row;
 }
 
 .buttons :hover {
