@@ -2,6 +2,8 @@ const timerButton = document.getElementById("timerButton");
 const pauseButton = document.getElementById("pauseButton");
 const teamOne = document.getElementById("teamOneScore");
 const teamTwo = document.getElementById("teamTwoScore");
+const teamOneInput = document.getElementById("teamOne");
+const teamTwoInput = document.getElementById("teamTwo");
 const tryy = document.getElementById("try");
 const try2 = document.getElementById("try2");
 const pen = document.getElementById("pen");
@@ -32,12 +34,25 @@ let conNo2 = 0;
 let penNo2 = 0;
 let dgNo2 = 0;
 
+let team1 = window.prompt("Please enter Team One's name: ");
+let team2 = window.prompt("Please enter Team Two's name: ");
+
+if (team1 != null) {
+  teamOneInput.innerHTML = `${team1} Score`;
+} else {
+  teamOneInput.innerHTML = "Team One Score";
+}
+if (team2 != null) {
+  teamTwoInput.innerHTML = `${team2} Score`;
+} else {
+  teamTwoInput.innerHTML = "Team Two Score";
+}
+
 timerButton.innerHTML = "Start Game";
 pauseButton.innerHTML = "Pause Game";
 
 timerButton.addEventListener("click", () => {
-  console.log("Button Clicked");
-  // timerButton.innerHTML = "Pause Game";
+  // console.log("Button Clicked");
   document.getElementById("try").disabled = false;
   document.getElementById("try2").disabled = false;
   document.getElementById("pen").disabled = false;
@@ -52,10 +67,10 @@ timerButton.addEventListener("click", () => {
       seconds = 0;
     }
 
-    if(minutes < 80) {
+    if (minutes < 80) {
       pauseButton.addEventListener("click", () => {
         clearInterval(timer);
-      })
+      });
     }
 
     if (minutes == 80) {
@@ -84,18 +99,18 @@ let teamTwoScore = 0;
 tryy.addEventListener("click", () => {
   teamOneScore += 5;
   t1s.innerText = teamOneScore;
-  tryNo1 ++;
+  tryNo1++;
   tryStat.textContent = tryNo1;
   document.getElementById("con").disabled = false;
 
   let paragraph = document.createElement("P");
-    paragraph.innerHTML = `Try Scored at ${minutes}m ${seconds}s`;
-    document.getElementById("teamOneCommentary").appendChild(paragraph);
+  paragraph.innerHTML = `Try Scored at ${minutes}m ${seconds}s`;
+  document.getElementById("teamOneCommentary").appendChild(paragraph);
 });
 try2.addEventListener("click", () => {
   teamTwoScore += 5;
   t2s.innerText = teamTwoScore;
-  tryNo2 ++;
+  tryNo2++;
   tryStat2.textContent = tryNo2;
   document.getElementById("con2").disabled = false;
 
@@ -106,7 +121,7 @@ try2.addEventListener("click", () => {
 pen.addEventListener("click", () => {
   teamOneScore += 3;
   t1s.innerText = teamOneScore;
-  penNo1 ++;
+  penNo1++;
   penStat.textContent = penNo1;
   document.getElementById("con").disabled = true;
 
@@ -117,7 +132,7 @@ pen.addEventListener("click", () => {
 pen2.addEventListener("click", () => {
   teamTwoScore += 3;
   t2s.innerText = teamTwoScore;
-  penNo2 ++;
+  penNo2++;
   penStat2.textContent = penNo2;
   document.getElementById("con2").disabled = true;
 
@@ -128,7 +143,7 @@ pen2.addEventListener("click", () => {
 con.addEventListener("click", () => {
   teamOneScore += 2;
   t1s.innerText = teamOneScore;
-  conNo1 ++;
+  conNo1++;
   conStat.textContent = conNo1;
   document.getElementById("con").disabled = true;
 
@@ -150,7 +165,7 @@ con2.addEventListener("click", () => {
 dg.addEventListener("click", () => {
   teamOneScore += 3;
   t1s.innerText = teamOneScore;
-  dgNo1 ++;
+  dgNo1++;
   dgStat.textContent = dgNo1;
   document.getElementById("con").disabled = true;
 
@@ -161,7 +176,7 @@ dg.addEventListener("click", () => {
 dg2.addEventListener("click", () => {
   teamTwoScore = teamTwoScore + 3;
   t2s.innerText = teamTwoScore;
-  dgNo2 ++;
+  dgNo2++;
   dgStat2.textContent = dgNo2;
   document.getElementById("con2").disabled = true;
 

@@ -111,6 +111,7 @@ button {
 .timerButtons {
   display: flex;
   flex-direction: row;
+  padding-left: 60px;
 }
 
 .buttons :hover {
